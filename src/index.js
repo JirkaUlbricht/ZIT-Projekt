@@ -30,7 +30,7 @@ const triviaFacts = [
   "První webová stránka byla vytvořena v roce 1991, jedná se o stránku CERNu.",
   "Algoritmus Google PageRank byl pojmenován po Larrym Pageovi.",
   "MySQL, MariaDB a MaxDB jsou pojmenovány po dětech jejich tvůrce Michaela Wideniuse. (My, Maria a Max).",
-  "První verze Windows 1.0 byla vydána v roce 1985 jako grafické rozhraní pro MS-DOS.",
+  "První verze Windows byla 1.0 a vydána v roce 1985 jako grafické rozhraní pro jeho předchůdce, MS-DOS.",
   "ASCII kód pro velké písmeno 'A' je 65.",
   "První zkompilovaný programovací jazyk byl Autocode vyvynutý v 50. letech.",
   "První e-mail byl odeslán Rayem Tomlinsonem v roce 1971 a také zavedl znak '@' k oddělení uživatelského jména od názvu počítače.",
@@ -38,7 +38,9 @@ const triviaFacts = [
   "ASCII znamená American Standard Code for Information Interchange.",
   "CAPTCHA je zkratka pro 'Completely Automated Public Turing test to tell Computers and Humans Apart'.",
   "Turingův stroj je abstraktní stroj, který upravuje symboly na nekonečném pásu podle sady pravidel.",
-  "Programovací jazyk C má v originální implementaci názvy funkcí omezené na 8 znaků."
+  "Programovací jazyk C má v originální implementaci názvy funkcí omezené na 8 znaků.",
+  "Čte toto vůbec někdo?",
+  "Moje dosud nevydané osobní protfolio je tvořeno v HTML, CSS, JS a PHP bez použití frameworků a má akuálně přes 20 000 řádků kódu.",
 ];
 
 triviaFacts.push(`Aktuální epocha Unix času je <b>${Math.floor(Date.now() / 1000)}</b> sekund od 1. ledna 1970.`);
@@ -55,7 +57,7 @@ app.innerHTML = /* html */`
       <div class="flex justify-between items-center h-14">
         <div class="flex items-center space-x-2">
           <span class="text-blue-600 dark:text-blue-400 text-xl">▶</span>
-          <span class="code-font text-lg font-semibold text-gray-800 dark:text-gray-100">portfolio.js</span>
+          <span class="code-font text-lg font-semibold text-gray-800 dark:text-gray-100">ZIT/index.js</span>
         </div>
 
         <div class="relative">
@@ -121,8 +123,8 @@ app.innerHTML = /* html */`
               <span class="text-blue-600 dark:text-blue-400"> role</span> = 
               <span class="text-green-600 dark:text-green-400">"Full Stack Developer"</span>;
             </div>
-            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <p class="code-font text-lg text-green-600 dark:text-green-400 mb-8 leading-relaxed">
+              /*<br>Jsem student informatiky na VŠB a full stack vývojář primárně zaměřený na čisté PHP a JavaScript. Kromě programování a technologice obecně mě také zajímá historie.<br>*/
             </p>
             
             <div class="flex items-center space-x-4 mb-8">
@@ -133,11 +135,17 @@ app.innerHTML = /* html */`
             </div>
 
             <div class="flex flex-wrap gap-4">
-              <a href="./projects.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <a href="./projects.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-750 text-white rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 Zobrazit projekty
               </a>
-              <a href="./cv.html" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg transition transform hover:-translate-y-0.5">
+              <a href="./cv.html" class="px-6 py-3 bg-gray-400 dark:bg-gray-700 hover:bg-gray-500 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg transition transform hover:-translate-y-0.5">
                 Životopis
+              </a>
+              <a href="https://github.com/JirkaUlbricht" target="_blank" class="px-6 py-3 bg-gray-400 dark:bg-gray-700 hover:bg-[#0d1117] dark:hover:bg-[#0d1117] text-gray-800 dark:text-gray-200 hover:text-white rounded-lg transition transform hover:-translate-y-0.5 flex items-center space-x-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                </svg>
+                <span>Můj Github</span>
               </a>
             </div>
           </div>
@@ -146,18 +154,16 @@ app.innerHTML = /* html */`
             <div class="bg-white dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-300 dark:border-gray-700">
               <div class="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 h-8 flex items-center px-3 space-x-2">
                 <div class="flex space-x-1.5">
-                  <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition cursor-pointer"></div>
-                  <div class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition cursor-pointer"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition cursor-pointer"></div>
+                  <img src="./img/vsc.png" alt="VS Code" class="w-4 h-4" />
                 </div>
                 <div class="flex-1 flex justify-center">
-                  <span class="code-font text-xs text-white font-medium">portfolio.js - ZIT</span>
+                  <span class="code-font text-xs text-white font-medium">index.js</span>
                 </div>
                 <div class="flex space-x-1">
-                  <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 transition rounded">
+                  <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition rounded">
                     <span class="text-white text-xs">─</span>
                   </button>
-                  <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 transition rounded">
+                  <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition rounded">
                     <span class="text-white text-xs">□</span>
                   </button>
                   <button class="w-6 h-6 flex items-center justify-center hover:bg-red-600 transition rounded">
@@ -340,9 +346,56 @@ const typeText = (element, text, baseSpeed = 80) => {
   type();
 };
 
+
+const deleteText = (element, baseSpeed = 30, callback) => {
+  let text = element.innerHTML;
+  let i = text.length;
+  
+  const deleteChar = () => {
+    if (i > 0) {
+      element.innerHTML = text.substring(0, i - 1);
+      i--;
+      const randomDelay = baseSpeed + Math.random() * 20 - 10;
+      setTimeout(deleteChar, randomDelay);
+    } else {
+      element.innerHTML = '&nbsp;';
+      if (callback) callback();
+    }
+  };
+  
+  deleteChar();
+};
+
 setTimeout(() => {
   const nameElement = document.getElementById('typed-name');
   if (nameElement) {
     typeText(nameElement, 'Jiří Ulbricht', 100);
   }
 }, 600);
+
+const updateTrivia = () => {
+  const triviaElement = document.querySelector('.text-sm.text-blue-700.dark\\:text-blue-400.mt-1');
+  if (triviaElement) {
+    deleteText(triviaElement, 12, () => {
+      const newTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
+      let i = 0;
+      const type = () => {
+        if (i < newTrivia.length) {
+          if (newTrivia.charAt(i) === '<') {
+            const closingTag = newTrivia.indexOf('>', i);
+            triviaElement.innerHTML += newTrivia.substring(i, closingTag + 1);
+            i = closingTag + 1;
+          } else {
+            triviaElement.innerHTML += newTrivia.charAt(i);
+            i++;
+          }
+          const randomDelay = 30 + Math.random() * 20 - 10;
+          setTimeout(type, randomDelay);
+        }
+      };
+      type();
+    });
+  }
+};
+
+setInterval(updateTrivia, 12000);

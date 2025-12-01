@@ -53,8 +53,8 @@ body {
 @keyframes slide-in-top {
   from {
     opacity: 0;
-    scale: 0.5;
-    transform: translateY(-50px);
+    scale: 0.75;
+    transform: translateY(-30px);
   }
   to {
     opacity: 1;
