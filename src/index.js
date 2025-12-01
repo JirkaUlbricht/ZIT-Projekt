@@ -19,21 +19,37 @@ const setTheme = (theme) => {
 initTheme();
 
 const triviaFacts = [
-  "JavaScript byl vytvořen za pouhých 10 dní!",
-  "První počítačový bug byl skutečný hmyz.",
-  "Python je pojmenován po Monty Pythonovi.",
-  "HTML není programovací jazyk.",
+  "JavaScript byl vytvořen za pouhých 10 dní v roce 1995 Brendanem Eichem.",
+  "První počítačový \"bug\" byl skutečný brouk nalezený v počítači Mark II v roce 1947.",
+  "Programovací jazyk Python je pojmenován po Monty Pythonovi.",
+  "HTML není programovací jazyk, jedná se o značkovací jazyk.",
   "C++ byl původně nazván 'C with Classes'.",
-  "Java a JavaScript nemají nic společného.",
-  "První počítačová hra byla Spacewar! (1962)."
+  "Java a JavaScript nemají nic společného, JavaScript byl původně nazván Mocha a LiveScript.",
+  "První počítačová hra byla Spacewar, byla vyvynuta roku 1962 a měla jen 9 KB",
+  "Linux byl vytvořen roku 1991 Linusem Torvaldsem.",
+  "První webová stránka byla vytvořena v roce 1991, jedná se o stránku CERNu.",
+  "Algoritmus Google PageRank byl pojmenován po Larrym Pageovi.",
+  "MySQL, MariaDB a MaxDB jsou pojmenovány po dětech jejich tvůrce Michaela Wideniuse. (My, Maria a Max).",
+  "První verze Windows 1.0 byla vydána v roce 1985 jako grafické rozhraní pro MS-DOS.",
+  "ASCII kód pro velké písmeno 'A' je 65.",
+  "První zkompilovaný programovací jazyk byl Autocode vyvynutý v 50. letech.",
+  "První e-mail byl odeslán Rayem Tomlinsonem v roce 1971 a také zavedl znak '@' k oddělení uživatelského jména od názvu počítače.",
+  "První počítačový program byl napsán Ada Lovelace už v 19. století.",
+  "ASCII znamená American Standard Code for Information Interchange.",
+  "CAPTCHA je zkratka pro 'Completely Automated Public Turing test to tell Computers and Humans Apart'.",
+  "Turingův stroj je abstraktní stroj, který upravuje symboly na nekonečném pásu podle sady pravidel.",
+  "Programovací jazyk C má v originální implementaci názvy funkcí omezené na 8 znaků."
 ];
+
+triviaFacts.push(`Aktuální epocha Unix času je <b>${Math.floor(Date.now() / 1000)}</b> sekund od 1. ledna 1970.`);
+triviaFacts.push(`Šance vidět tento fakt je <b>1:${triviaFacts.length + 1}</b>!`);
 
 const randomTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
 
 const app = document.createElement('div');
 app.className = 'min-h-screen';
 
-app.innerHTML = `
+app.innerHTML = /* html */`
   <nav class="fixed top-0 w-full bg-gray-100 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 z-50 transition-colors backdrop-blur-sm bg-opacity-90">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-14">
@@ -47,7 +63,7 @@ app.innerHTML = `
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
             </svg>
-            <span>Téma</span>
+            <span>Vzhled</span>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
@@ -58,13 +74,13 @@ app.innerHTML = `
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
               </svg>
-              <span>Světlý režim</span>
+              <span>Světlý</span>
             </button>
             <button data-theme="dark" class="w-full px-4 py-3 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition flex items-center space-x-3 text-gray-700 dark:text-gray-300">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
               </svg>
-              <span>Tmavý režim</span>
+              <span>Tmavý</span>
             </button>
           </div>
         </div>
@@ -73,14 +89,14 @@ app.innerHTML = `
   </nav>
 
   <main class="pt-14">
-    <section id="home" class="min-h-screen flex items-center bg-linear-to-br from-gray-50 via-blue-50 to-gray-100 dark:from-gray-900 dark:via-blue-950 dark:to-gray-800 transition-colors relative overflow-hidden">
+    <section id="home" class="min-h-screen flex items-center bg-gradient-to-br from-gray-50 via-blue-50 to-gray-100 dark:from-gray-900 dark:via-blue-950 dark:to-gray-800 transition-colors relative overflow-hidden">
       <div class="absolute inset-0 opacity-10">
         <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
       </div>
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div class="mb-8 bg-blue-100 dark:bg-blue-900 border-l-4 border-blue-600 dark:border-blue-400 p-4 rounded-r-lg shadow-md animate-fade-in">
+        <div class="mb-8 bg-blue-100 dark:bg-blue-900 border-l-4 border-blue-600 dark:border-blue-400 p-4 rounded-r-lg shadow-md animate-slide-in-top">
           <div class="flex items-start space-x-3">
             <svg class="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-5a1 1 0 100 2 1 1 0 000-2z"/>
@@ -93,12 +109,12 @@ app.innerHTML = `
         </div>
 
         <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div class="animate-slide-in-left">
+          <div>
             <div class="code-font text-sm text-blue-600 dark:text-blue-400 mb-4">
               <span class="text-gray-500 dark:text-gray-400">1</span> // Ahoj, jmenuji se
             </div>
             <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-              Jiří Ulbricht
+              <span id="typed-name"></span><span class="animate-pulse">|</span>
             </h1>
             <div class="code-font text-xl text-gray-600 dark:text-gray-300 mb-6">
               <span class="text-purple-600 dark:text-purple-400">const</span> 
@@ -117,25 +133,25 @@ app.innerHTML = `
             </div>
 
             <div class="flex flex-wrap gap-4">
-              <a href="#projects" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+              <a href="./projects.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 Zobrazit projekty
               </a>
-              <a href="#contact" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg transition transform hover:-translate-y-0.5">
-                Kontaktovat
+              <a href="./cv.html" class="px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 rounded-lg transition transform hover:-translate-y-0.5">
+                Životopis
               </a>
             </div>
           </div>
           
-          <div class="hidden md:block animate-slide-in-right">
+          <div class="hidden md:block">
             <div class="bg-white dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-300 dark:border-gray-700">
-              <div class="bg-linear-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 h-8 flex items-center px-3 space-x-2">
+              <div class="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 h-8 flex items-center px-3 space-x-2">
                 <div class="flex space-x-1.5">
                   <div class="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600 transition cursor-pointer"></div>
                   <div class="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600 transition cursor-pointer"></div>
                   <div class="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600 transition cursor-pointer"></div>
                 </div>
                 <div class="flex-1 flex justify-center">
-                  <span class="code-font text-xs text-white font-medium">portfolio.js - Visual Studio Code</span>
+                  <span class="code-font text-xs text-white font-medium">portfolio.js - ZIT</span>
                 </div>
                 <div class="flex space-x-1">
                   <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 transition rounded">
@@ -185,7 +201,7 @@ app.innerHTML = `
                         <span class="text-gray-400">.</span>
                         <span class="text-blue-300">name</span>
                         <span class="text-gray-400"> = </span>
-                        <span class="text-green-400">"Jiří"</span>
+                        <span class="text-green-400">"Jirka"</span>
                         <span class="text-gray-400">;</span>
                       </div>
                     </div>
@@ -208,14 +224,14 @@ app.innerHTML = `
                     <div class="flex">
                       <span class="text-gray-500 w-8 text-right mr-4 select-none">6</span>
                       <div class="flex-1 ml-12">
-                        <span class="text-green-400">"React"</span>
+                        <span class="text-green-400">"PHP"</span>
                         <span class="text-gray-400">,</span>
                       </div>
                     </div>
                     <div class="flex">
                       <span class="text-gray-500 w-8 text-right mr-4 select-none">7</span>
                       <div class="flex-1 ml-12">
-                        <span class="text-green-400">"Node.js"</span>
+                        <span class="text-green-400">"C"</span>
                       </div>
                     </div>
                     <div class="flex">
@@ -272,27 +288,61 @@ app.innerHTML = `
 
 document.body.appendChild(app);
 
-const dropdownBtn = document.getElementById('theme-dropdown-btn');
-const dropdown = document.getElementById('theme-dropdown');
-const themeButtons = dropdown.querySelectorAll('[data-theme]');
+setTimeout(() => {
+  const dropdownBtn = document.getElementById('theme-dropdown-btn');
+  const dropdown = document.getElementById('theme-dropdown');
+  const themeButtons = dropdown.querySelectorAll('[data-theme]');
 
-dropdownBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  dropdown.classList.toggle('hidden');
-});
-
-document.addEventListener('click', () => {
-  dropdown.classList.add('hidden');
-});
-
-dropdown.addEventListener('click', (e) => {
-  e.stopPropagation();
-});
-
-themeButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const theme = btn.getAttribute('data-theme');
-    setTheme(theme);
-    dropdown.classList.add('hidden');
+  dropdownBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('hidden');
   });
-});
+
+  document.addEventListener('click', () => {
+    if (!dropdown.classList.contains('hidden')) {
+      dropdown.classList.add('hidden');
+    }
+  });
+
+  dropdown.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  themeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const theme = btn.getAttribute('data-theme');
+      setTheme(theme);
+      dropdown.classList.add('hidden');
+    });
+  });
+}, 100);
+
+const typeText = (element, text, baseSpeed = 80) => {
+  let i = 0;
+  element.textContent = '';
+  const cursor = element.nextElementSibling;
+  
+  const type = () => {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      const randomDelay = baseSpeed + Math.random() * 150 - 50;
+      setTimeout(type, randomDelay);
+    } else {
+      setTimeout(() => {
+        if (cursor) {
+          cursor.style.display = 'none';
+        }
+      }, 1000);
+    }
+  };
+  
+  type();
+};
+
+setTimeout(() => {
+  const nameElement = document.getElementById('typed-name');
+  if (nameElement) {
+    typeText(nameElement, 'Jiří Ulbricht', 100);
+  }
+}, 600);
