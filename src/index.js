@@ -24,7 +24,7 @@ const triviaFacts = [
   "Programovací jazyk Python je pojmenován po Monty Pythonovi.",
   "HTML není programovací jazyk, jedná se o značkovací jazyk.",
   "C++ byl původně nazván 'C with Classes'.",
-  "Java a JavaScript nemají nic společného, JavaScript byl původně nazván Mocha a LiveScript.",
+  "Java a JavaScript nemají nic společného, JavaScript byl původně nazván Mocha a pak ještě LiveScript.",
   "První počítačová hra byla Spacewar, byla vyvynuta roku 1962 a měla jen 9 KB",
   "Linux byl vytvořen roku 1991 Linusem Torvaldsem.",
   "První webová stránka byla vytvořena v roce 1991, jedná se o stránku CERNu.",
@@ -34,19 +34,80 @@ const triviaFacts = [
   "ASCII kód pro velké písmeno 'A' je 65.",
   "První zkompilovaný programovací jazyk byl Autocode vyvynutý v 50. letech.",
   "První e-mail byl odeslán Rayem Tomlinsonem v roce 1971 a také zavedl znak '@' k oddělení uživatelského jména od názvu počítače.",
-  "První počítačový program byl napsán Ada Lovelace už v 19. století.",
+  "První počítačový program byl napsán už v 19. století Adou Lovelacovou.",
   "ASCII znamená American Standard Code for Information Interchange.",
   "CAPTCHA je zkratka pro 'Completely Automated Public Turing test to tell Computers and Humans Apart'.",
   "Turingův stroj je abstraktní stroj, který upravuje symboly na nekonečném pásu podle sady pravidel.",
   "Programovací jazyk C má v originální implementaci názvy funkcí omezené na 8 znaků.",
   "Čte toto vůbec někdo?",
   "Moje dosud nevydané osobní protfolio je tvořeno v HTML, CSS, JS a PHP bez použití frameworků a má akuálně přes 20 000 řádků kódu.",
+  "01001000 01100101 01101100 01101100 01101111 00100000 01110111 01101111 01110010 01101100 01100100 00100001",
+  "První veřejně dostupný AI chatbot byla ELIZA, vytvořený v roce 1966 Josephem Weizenbaumem.",
+  "První webový prohlížeč byl vyvynutený Timem Berners-Leem v roce 1990 a jmenoval se WorldWideWeb (později přejmenován na Nexus).",
+  "Jazyk PHP byl vytvořen Rasmusem Lerdorfem v roce 1994 a původně to byla zkratka pro Personal Home Pages.",
+  "Zkratka PHP dnes znamená Hypertext Preprocessor.",
+  "PHP je jedním z nejpopulárnějších jazyků pro vývoj webových aplikací a je používán ve více než 79% všech webových stránek s dynamickým obsahem.",
+  "Konfugurace mailů na webu je bolest mého života.",
+  "Váš kód v jazyce C projde prepprocesorem, kompilátorem, assemblerem a linkerem, než se stane spustitelným programem.",
+  "Termín computer byl poprvé použit už v roce 1613 a označoval lidi, kteří prováděli výpočty ručně.",
+  "Haskell je zlo společnosti.",
 ];
 
 triviaFacts.push(`Aktuální epocha Unix času je <b>${Math.floor(Date.now() / 1000)}</b> sekund od 1. ledna 1970.`);
 triviaFacts.push(`Šance vidět tento fakt je <b>1:${triviaFacts.length + 1}</b>!`);
+triviaFacts.push(`Vaše IP adresa je <b>${window.location.hostname}</b>.`);
 
-const randomTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
+const fetchRandomRepo = async () => {
+  try {
+    const response = await fetch('https://api.github.com/users/JirkaUlbricht/repos?per_page=100');
+    const repos = await response.json();
+    
+    const publicRepos = repos.filter(repo => !repo.private && !repo.fork);
+    
+    if (publicRepos.length > 0) {
+      const randomRepo = publicRepos[Math.floor(Math.random() * publicRepos.length)];
+      const stars = randomRepo.stargazers_count;
+      const starsText = stars === 1 ? 'hvězdičku' : stars < 5 ? 'hvězdičky' : 'hvězdiček';
+      
+      triviaFacts.push(
+        `Jeden z mých veřejných GitHub repositářů je <a href="${randomRepo.html_url}" target="_blank" class="underline hover:text-blue-500">${randomRepo.name}</a> a má <b>${stars}</b> ${starsText}.`
+      );
+    }
+  } catch (error) {
+    console.error('Failed to fetch GitHub repos:', error);
+    triviaFacts.push(`Moje Github repositáře se nepovedlo načíst, najdete je ale <a href="https://github.com/JirkaUlbricht?tab=repositories">zde.</a>`);
+  }
+};
+
+await fetchRandomRepo();
+
+const triviaHistory = [];
+const maxHistorySize = 10;
+
+const getRandomTrivia = () => {
+  let attempts = 0;
+  let randomIndex;
+  
+  do {
+    randomIndex = Math.floor(Math.random() * triviaFacts.length);
+    attempts++;
+    
+    if (attempts > triviaFacts.length * 2) {
+      triviaHistory.length = 0;
+      break;
+    }
+  } while (triviaHistory.includes(randomIndex));
+  
+  triviaHistory.push(randomIndex);
+  
+  if (triviaHistory.length > maxHistorySize) {
+    triviaHistory.shift();
+  }
+  
+  return triviaFacts[randomIndex];
+};
+
+const randomTrivia = getRandomTrivia();
 
 const app = document.createElement('div');
 app.className = 'min-h-screen';
@@ -358,7 +419,7 @@ const deleteText = (element, baseSpeed = 30, callback) => {
       const randomDelay = baseSpeed + Math.random() * 20 - 10;
       setTimeout(deleteChar, randomDelay);
     } else {
-      element.innerHTML = '&nbsp;';
+      element.innerHTML = ' ';
       if (callback) callback();
     }
   };
@@ -377,7 +438,7 @@ const updateTrivia = () => {
   const triviaElement = document.querySelector('.text-sm.text-blue-700.dark\\:text-blue-400.mt-1');
   if (triviaElement) {
     deleteText(triviaElement, 12, () => {
-      const newTrivia = triviaFacts[Math.floor(Math.random() * triviaFacts.length)];
+      const newTrivia = getRandomTrivia();
       let i = 0;
       const type = () => {
         if (i < newTrivia.length) {
