@@ -25,14 +25,14 @@ const triviaFacts = [
   "HTML není programovací jazyk, jedná se o značkovací jazyk.",
   "C++ byl původně nazván 'C with Classes'.",
   "Java a JavaScript nemají nic společného, JavaScript byl původně nazván Mocha a pak ještě LiveScript.",
-  "První počítačová hra byla Spacewar, byla vyvynuta roku 1962 a měla jen 9 KB",
+  "První počítačová hra byla Spacewar, byla vyvinuta roku 1962 a měla jen 9 KB",
   "Linux byl vytvořen roku 1991 Linusem Torvaldsem.",
   "První webová stránka byla vytvořena v roce 1991, jedná se o stránku CERNu.",
   "Algoritmus Google PageRank byl pojmenován po Larrym Pageovi.",
   "MySQL, MariaDB a MaxDB jsou pojmenovány po dětech jejich tvůrce Michaela Wideniuse. (My, Maria a Max).",
   "První verze Windows byla 1.0 a vydána v roce 1985 jako grafické rozhraní pro jeho předchůdce, MS-DOS.",
   "ASCII kód pro velké písmeno 'A' je 65.",
-  "První zkompilovaný programovací jazyk byl Autocode vyvynutý v 50. letech.",
+  "První zkompilovaný programovací jazyk byl Autocode vyvinutý v 50. letech.",
   "První e-mail byl odeslán Rayem Tomlinsonem v roce 1971 a také zavedl znak '@' k oddělení uživatelského jména od názvu počítače.",
   "První počítačový program byl napsán už v 19. století Adou Lovelacovou.",
   "ASCII znamená American Standard Code for Information Interchange.",
@@ -40,21 +40,47 @@ const triviaFacts = [
   "Turingův stroj je abstraktní stroj, který upravuje symboly na nekonečném pásu podle sady pravidel.",
   "Programovací jazyk C má v originální implementaci názvy funkcí omezené na 8 znaků.",
   "Čte toto vůbec někdo?",
-  "Moje dosud nevydané osobní protfolio je tvořeno v HTML, CSS, JS a PHP bez použití frameworků a má akuálně přes 20 000 řádků kódu.",
+  "Moje dosud nevydané osobní webové portfolio je tvořeno v HTML, CSS, JS a PHP bez použití frameworků a má akuálně přes 20 000 řádků kódu.",
   "01001000 01100101 01101100 01101100 01101111 00100000 01110111 01101111 01110010 01101100 01100100 00100001",
   "První veřejně dostupný AI chatbot byla ELIZA, vytvořený v roce 1966 Josephem Weizenbaumem.",
-  "První webový prohlížeč byl vyvynutený Timem Berners-Leem v roce 1990 a jmenoval se WorldWideWeb (později přejmenován na Nexus).",
+  "První webový prohlížeč byl vyvinutý Timem Berners-Leem v roce 1990 a jmenoval se WorldWideWeb (později přejmenován na Nexus).",
   "Jazyk PHP byl vytvořen Rasmusem Lerdorfem v roce 1994 a původně to byla zkratka pro Personal Home Pages.",
-  "Zkratka PHP dnes znamená Hypertext Preprocessor.",
+  "Zkratka PHP dnes už znamená Hypertext Preprocessor, originálně to byla zkratka pro Personal Home Pages.",
   "PHP je jedním z nejpopulárnějších jazyků pro vývoj webových aplikací a je používán ve více než 79% všech webových stránek s dynamickým obsahem.",
-  "Konfugurace mailů na webu je bolest mého života.",
-  "Váš kód v jazyce C projde prepprocesorem, kompilátorem, assemblerem a linkerem, než se stane spustitelným programem.",
+  "Konfigurace mailů na webu je bolest mého života.",
+  "Váš kód v jazyce C projde preprocesorem, kompilátorem, assemblerem a linkerem, než se stane spustitelným programem.",
   "Termín computer byl poprvé použit už v roce 1613 a označoval lidi, kteří prováděli výpočty ručně.",
   "Haskell je zlo společnosti.",
+  "--; DROP TABLE triviaFacts;--",
+  "Zadejte :(){ :|:& };: do vašeho Linuxového terminálu pro menší překvapení :)",
+  "Vyslovovat SQL jako 'sequel' nebo 'skvel' by mělo být trestné.",
+  "Jedině opravdový vývojář testuje v produkci.",
+  "Debugging je jako být detektivem v zločinu, kde jste sami sebe obvinili.",
+  "Terry Davis vytvořil programovací jazyk TempleOS, který považoval za obnovení Božího chrámu na Zemi.",
+  "HolyC je programovací jazyk vytvořený Terrym Davisem pro jeho operační systém TempleOS.",
+  "Jak mám proboha vycentrovat div?",
+  "Stack Overflow je tvůj přítel, narozdíl od jeho jmenovce, erroru 'Stack Overflow', který tě může například potkat v jazyce C.",
+  "Příkaz 'rm -rf / --no-preserve-root' v Linuxu vám smaže všechny soubory na vašem systému.",
+  "Magnetické pásky se používají ještě dnes, jelikož nabízejí nejnižší cenu za gigabajt pro dlouhodobé ukládání a archivaci dat.",
+  "Y2K krize způsobena obavami z přechodu do roku 2000, jelikož spoustu systémů používalo dvouciferné označení roku, nakonec způsobila jen minimální problémy díky rozsáhlým přípravám.",
+  "Něco podobného na \"Další Y2K\" bude v 3:14:07 UTC 19.1. 2038, kdy 32-bitové systémy používající Unix čas dosáhnou limitu 2 147 483 647 sekund od 1. ledna 1970.",
+  "Správný programátor vezme rutinní desetiminutový úkol a udělá z něho práci na 5 hodin",
+  "Počítač dělá to, co mu řeknete, ne to, co chcete aby dělal.",
+  "Ze začátku pouze já a bůh věděli, co můj kód dělá. Teď to ví už jen bůh.",
+  "V Unicodu jsou doteď některé znaky, které nikdo neví, co znamenají.",
+  "404: Fakt nenalezen.",
+  "Tester přijde do baru a objedná si 1 pivo, 10 piv, NULL piv, -1.45 piv, 'jedno' pivo a vše funguje, pak přijde zákazník a zeptá se kde jsou záchody a bar exploduje.",
+  "Nebaví mě vymýšlet text pro mé Github commity.",
+  "Dej jednomu programátorovi úkol a zabere mu to hodinu. Dej dvěma programátorům stejný úkol a zabere jim to dva týdny.",
+  "Zkoušeli jste to vypnout a znovu zapnout?",
+  "Segmentation fault (core dumped)",
+  "4 587 158 lines effected nevěstí nic dobrého, snad si použil START TRANSACTION; že jo?",
+  "Šéfe, omylem jsem smazal produkční databázi.",
+  "Chcete programovat bez bugů? Podívejte se na toto video: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
 ];
 
 triviaFacts.push(`Aktuální epocha Unix času je <b>${Math.floor(Date.now() / 1000)}</b> sekund od 1. ledna 1970.`);
-triviaFacts.push(`Šance vidět tento fakt je <b>1:${triviaFacts.length + 1}</b>!`);
+triviaFacts.push(`Šance vidět jeden specifický fakt je <b>1:${triviaFacts.length + 1}</b> neboli přibližně <b>${((1 / (triviaFacts.length + 1)) * 100).toFixed(4)}%</b>.`);
 triviaFacts.push(`Vaše IP adresa je <b>${window.location.hostname}</b>.`);
 
 const fetchRandomRepo = async () => {
@@ -70,7 +96,7 @@ const fetchRandomRepo = async () => {
       const starsText = stars === 1 ? 'hvězdičku' : stars < 5 ? 'hvězdičky' : 'hvězdiček';
       
       triviaFacts.push(
-        `Jeden z mých veřejných GitHub repositářů je <a href="${randomRepo.html_url}" target="_blank" class="underline hover:text-blue-500">${randomRepo.name}</a> a má <b>${stars}</b> ${starsText}.`
+        `Jeden z mých veřejných Github repositářů je <a href="${randomRepo.html_url}" target="_blank" class="underline bold hover:text-blue-500">${randomRepo.name}</a> a má <b>${stars}</b> ${starsText}.`
       );
     }
   } catch (error) {
@@ -82,7 +108,7 @@ const fetchRandomRepo = async () => {
 await fetchRandomRepo();
 
 const triviaHistory = [];
-const maxHistorySize = 10;
+const maxHistorySize = 15;
 
 const getRandomTrivia = () => {
   let attempts = 0;
@@ -157,7 +183,6 @@ app.innerHTML = /* html */`
         <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
         <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
       </div>
-
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div class="mb-8 bg-blue-100 dark:bg-blue-900 border-l-4 border-blue-600 dark:border-blue-400 p-4 rounded-r-lg shadow-md animate-slide-in-top">
           <div class="flex items-start space-x-3">
@@ -165,12 +190,11 @@ app.innerHTML = /* html */`
               <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-5a1 1 0 100 2 1 1 0 000-2z"/>
             </svg>
             <div>
-              <p class="text-sm font-semibold text-blue-800 dark:text-blue-300">Programátorská zajímavost dne</p>
+              <p class="text-sm font-semibold text-blue-800 dark:text-blue-300"> Programátorská zajímavost dne</p>
               <p class="text-sm text-blue-700 dark:text-blue-400 mt-1">${randomTrivia}</p>
             </div>
           </div>
         </div>
-
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div class="code-font text-sm text-blue-600 dark:text-blue-400 mb-4">
@@ -187,15 +211,13 @@ app.innerHTML = /* html */`
             <p class="code-font text-lg text-green-600 dark:text-green-400 mb-8 leading-relaxed">
               /*<br>Jsem student informatiky na VŠB a full stack vývojář primárně zaměřený na čisté PHP a JavaScript. Kromě programování a technologice obecně mě také zajímá historie.<br>*/
             </p>
-            
             <div class="flex items-center space-x-4 mb-8">
               <div class="flex items-center space-x-2">
                 <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <span class="text-sm text-gray-600 dark:text-gray-400">K dispozici pro projekty</span>
               </div>
             </div>
-
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-wrap gap-4 max-w-3xl">
               <a href="./projects.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-750 text-white rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
                 Zobrazit projekty
               </a>
@@ -208,11 +230,14 @@ app.innerHTML = /* html */`
                 </svg>
                 <span>Můj Github</span>
               </a>
+              <button id="vscode-tray" class="hidden px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-2">
+                <img src="./img/vsc.png" alt="VS Code" class="w-5 h-5" />
+                <span>Visual Studio Code</span>
+              </button>
             </div>
           </div>
-          
-          <div class="hidden md:block">
-            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-300 dark:border-gray-700">
+          <div class="hidden md:block" id="vscode-window">
+            <div class="bg-white dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-300 dark:border-gray-700 max-w-2xl w-full mx-auto">
               <div class="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 h-8 flex items-center px-3 space-x-2">
                 <div class="flex space-x-1.5">
                   <img src="./img/vsc.png" alt="VS Code" class="w-4 h-4" />
@@ -221,18 +246,17 @@ app.innerHTML = /* html */`
                   <span class="code-font text-xs text-white font-medium">index.js</span>
                 </div>
                 <div class="flex space-x-1">
-                  <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition rounded">
+                  <button id="minimize-btn" class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition rounded">
                     <span class="text-white text-xs">─</span>
                   </button>
-                  <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition rounded">
+                  <button class="w-6 h-6 flex items-center justify-center hover:bg-blue-800 dark:hover:bg-blue-700 transition rounded opacity-50 cursor-not-allowed">
                     <span class="text-white text-xs">□</span>
                   </button>
-                  <button class="w-6 h-6 flex items-center justify-center hover:bg-red-600 transition rounded">
+                  <button id="close-btn" class="w-6 h-6 flex items-center justify-center hover:bg-red-600 transition rounded">
                     <span class="text-white text-xs">✕</span>
                   </button>
                 </div>
               </div>
-              
               <div class="flex">
                 <div class="w-12 bg-gray-800 dark:bg-gray-950 flex flex-col items-center py-2 space-y-4 border-r border-gray-700">
                   <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -243,7 +267,6 @@ app.innerHTML = /* html */`
                     <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-                
                 <div class="flex-1 bg-gray-900 dark:bg-black p-6">
                   <div class="code-font text-sm space-y-1">
                     <div class="flex">
@@ -333,8 +356,7 @@ app.innerHTML = /* html */`
                   </div>
                 </div>
               </div>
-              
-              <div class="bg-blue-600 dark:bg-blue-800 h-6 flex items-center justify-between px-3 text-xs text-white">
+              <div class="bg-blue-600 dark:bg-blue-800 h-6 flex items-center justify-between px-3 text-xs text-white relative">
                 <div class="flex items-center space-x-4">
                   <span>UTF-8</span>
                   <span>JavaScript</span>
@@ -382,7 +404,72 @@ setTimeout(() => {
       dropdown.classList.add('hidden');
     });
   });
+
+  const vscodeWindow = document.getElementById('vscode-window');
+  const vscodeTray = document.getElementById('vscode-tray');
+  const minimizeBtn = document.getElementById('minimize-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const buttonContainer = document.querySelector('.flex.flex-wrap.gap-4.max-w-3xl');
+
+  if (minimizeBtn && vscodeWindow && vscodeTray) {
+    minimizeBtn.addEventListener('click', () => {
+      vscodeWindow.style.transition = 'all 0.2s ease-out';
+      vscodeWindow.style.opacity = '0';
+      vscodeWindow.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        vscodeWindow.classList.add('hidden');
+        vscodeTray.classList.remove('hidden');
+        if (buttonContainer) {
+          buttonContainer.style.width = '200%';
+          buttonContainer.style.position = 'relative';
+          buttonContainer.style.zIndex = '20';
+        }
+      }, 200);
+    });
+  }
+
+  if (closeBtn && vscodeWindow) {
+    closeBtn.addEventListener('click', () => {
+      vscodeWindow.style.transition = 'all 0.2s ease-out';
+      vscodeWindow.style.opacity = '0';
+      vscodeWindow.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        vscodeWindow.remove();
+        if (vscodeTray) vscodeTray.remove();
+        if (buttonContainer) {
+          buttonContainer.style.width = '200%';
+          buttonContainer.style.position = 'relative';
+          buttonContainer.style.zIndex = '20';
+        }
+      }, 200);
+    });
+  }
+
+  if (vscodeTray && vscodeWindow) {
+    vscodeTray.addEventListener('click', () => {
+      vscodeTray.classList.add('hidden');
+      vscodeWindow.classList.remove('hidden');
+      vscodeWindow.style.transition = 'all 0.2s ease-out';
+      vscodeWindow.style.opacity = '1';
+      vscodeWindow.style.transform = 'scale(1)';
+      if (buttonContainer) {
+        buttonContainer.style.maxWidth = '48rem';
+      }
+    });
+  }
 }, 100);
+
+let isPageVisible = true;
+let animationQueue = [];
+
+document.addEventListener('visibilitychange', () => {
+  isPageVisible = !document.hidden;
+  
+  if (!isPageVisible) {
+    animationQueue.forEach(id => cancelAnimationFrame(id));
+    animationQueue = [];
+  }
+});
 
 const typeText = (element, text, baseSpeed = 80) => {
   let i = 0;
@@ -407,24 +494,49 @@ const typeText = (element, text, baseSpeed = 80) => {
   type();
 };
 
-
 const deleteText = (element, baseSpeed = 30, callback) => {
   let text = element.innerHTML;
   let i = text.length;
+  let lastTimestamp = null;
+  let animId = null;
   
-  const deleteChar = () => {
-    if (i > 0) {
-      element.innerHTML = text.substring(0, i - 1);
-      i--;
-      const randomDelay = baseSpeed + Math.random() * 20 - 10;
-      setTimeout(deleteChar, randomDelay);
+  const originalHeight = element.offsetHeight;
+  element.style.minHeight = `${originalHeight}px`;
+  
+  const deleteChar = (timestamp) => {
+    if (!isPageVisible) {
+      animId = requestAnimationFrame(deleteChar);
+      animationQueue.push(animId);
+      return;
+    }
+    
+    if (!lastTimestamp) lastTimestamp = timestamp;
+    const elapsed = timestamp - lastTimestamp;
+    
+    if (elapsed >= baseSpeed + Math.random() * 20 - 10) {
+      if (i > 0) {
+        element.innerHTML = text.substring(0, i - 1);
+        i--;
+        lastTimestamp = timestamp;
+        animId = requestAnimationFrame(deleteChar);
+        animationQueue.push(animId);
+      } else {
+        element.innerHTML = '&nbsp;';
+        if (callback) {
+          setTimeout(() => {
+            element.style.minHeight = '';
+            callback();
+          }, 100);
+        }
+      }
     } else {
-      element.innerHTML = ' ';
-      if (callback) callback();
+      animId = requestAnimationFrame(deleteChar);
+      animationQueue.push(animId);
     }
   };
   
-  deleteChar();
+  animId = requestAnimationFrame(deleteChar);
+  animationQueue.push(animId);
 };
 
 setTimeout(() => {
@@ -435,26 +547,48 @@ setTimeout(() => {
 }, 600);
 
 const updateTrivia = () => {
+  if (!isPageVisible) return;
+  
   const triviaElement = document.querySelector('.text-sm.text-blue-700.dark\\:text-blue-400.mt-1');
   if (triviaElement) {
     deleteText(triviaElement, 12, () => {
       const newTrivia = getRandomTrivia();
       let i = 0;
-      const type = () => {
-        if (i < newTrivia.length) {
-          if (newTrivia.charAt(i) === '<') {
-            const closingTag = newTrivia.indexOf('>', i);
-            triviaElement.innerHTML += newTrivia.substring(i, closingTag + 1);
-            i = closingTag + 1;
-          } else {
-            triviaElement.innerHTML += newTrivia.charAt(i);
-            i++;
+      let lastTimestamp = null;
+      let animId = null;
+      
+      const type = (timestamp) => {
+        if (!isPageVisible) {
+          animId = requestAnimationFrame(type);
+          animationQueue.push(animId);
+          return;
+        }
+        
+        if (!lastTimestamp) lastTimestamp = timestamp;
+        const elapsed = timestamp - lastTimestamp;
+        
+        if (elapsed >= 30 + Math.random() * 20 - 10) {
+          if (i < newTrivia.length) {
+            if (newTrivia.charAt(i) === '<') {
+              const closingTag = newTrivia.indexOf('>', i);
+              triviaElement.innerHTML += newTrivia.substring(i, closingTag + 1);
+              i = closingTag + 1;
+            } else {
+              triviaElement.innerHTML += newTrivia.charAt(i);
+              i++;
+            }
+            lastTimestamp = timestamp;
+            animId = requestAnimationFrame(type);
+            animationQueue.push(animId);
           }
-          const randomDelay = 30 + Math.random() * 20 - 10;
-          setTimeout(type, randomDelay);
+        } else {
+          animId = requestAnimationFrame(type);
+          animationQueue.push(animId);
         }
       };
-      type();
+      
+      animId = requestAnimationFrame(type);
+      animationQueue.push(animId);
     });
   }
 };
