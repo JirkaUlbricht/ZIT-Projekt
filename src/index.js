@@ -229,7 +229,7 @@ app.innerHTML = /* html */`
               <span class="text-green-600 dark:text-green-400">"Full Stack Developer"</span>;
             </div>
             <p class="code-font text-lg text-green-600 dark:text-green-400 mb-8 leading-relaxed">
-              /*<br>Jsem student informatiky na VŠB a full stack vývojář primárně zaměřený na čisté PHP a JavaScript. Kromě programování a technologice obecně mě také zajímá historie.<br>*/
+              /*<br>Jsem student informatiky na VŠB a full stack vývojář primárně zaměřený na čisté PHP a JavaScript. Kromě programování a technologie obecně mě také zajímá historie.<br>*/
             </p>
             <div class="flex items-center space-x-4 mb-8">
               <div class="flex items-center space-x-2">
