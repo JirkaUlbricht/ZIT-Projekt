@@ -1,11 +1,2 @@
 # Route user to error page on 404
 ErrorDocument 404 /error.html
-
-#Remove .html extention
-RewriteEngine on
-
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NC,L,R]
-
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^ %{REQUEST_URI}.html [NC,L]

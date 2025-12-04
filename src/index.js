@@ -4,6 +4,8 @@ const initTheme = () => {
   const theme = localStorage.getItem('theme') || 'light';
   if (theme === 'dark') {
     document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
   }
 };
 
@@ -249,7 +251,7 @@ app.innerHTML = /* html */`
                 <span>Můj Github</span>
               </a>
               <button id="vscode-tray" class="hidden px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center space-x-2">
-                <img src="./img/vsc.png" alt="VS Code" class="w-5 h-5" />
+                <img src="./src/img/vsc.png" alt="VS Code" class="w-5 h-5" />
                 <span>Visual Studio Code</span>
               </button>
             </div>
@@ -258,7 +260,7 @@ app.innerHTML = /* html */`
             <div class="bg-white dark:bg-gray-900 rounded-lg shadow-2xl overflow-hidden border border-gray-300 dark:border-gray-700 max-w-2xl w-full mx-auto">
               <div class="bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-800 dark:to-blue-900 h-8 flex items-center px-3 space-x-2">
                 <div class="flex space-x-1.5">
-                  <img src="./img/vsc.png" alt="VS Code" class="w-4 h-4" />
+                  <img src="./src/img/vsc.png" alt="VS Code" class="w-4 h-4" />
                 </div>
                 <div class="flex-1 flex justify-center">
                   <span class="code-font text-xs text-white font-medium">index.js</span>

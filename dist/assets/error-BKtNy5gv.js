@@ -1,46 +1,4 @@
-import './styles/main.css';
-
-const initTheme = () => {
-  const theme = localStorage.getItem('theme') || 'light';
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-};
-
-const setTheme = (theme) => {
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  localStorage.setItem('theme', theme);
-};
-
-initTheme();
-
-const errorMessages = [
-    "404 - Stránka nenalezena",
-    "Oops! Tato stránka neexistuje",
-    "Chyba - Stránka se ztratila v kódu",
-    "Error 404 - Page Not Found"
-];
-
-const errorTips = [
-    "Zkuste zkontrolovat URL adresu.",
-    "Možná jste se přepsali v adrese.",
-    "Stránka mohla být přesunuta nebo odstraněna.",
-    "Použijte navigaci pro návrat na hlavní stránku."
-];
-
-const randomError = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-const randomTip = errorTips[Math.floor(Math.random() * errorTips.length)];
-
-const app = document.createElement('div');
-app.className = 'min-h-screen';
-
-app.innerHTML = /* html */`
+import"./main-C7BSEx1I.js";const c=()=>{(localStorage.getItem("theme")||"light")==="dark"?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")},p=e=>{e==="dark"?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),localStorage.setItem("theme",e)};c();const o=["404 - Stránka nenalezena","Oops! Tato stránka neexistuje","Chyba - Stránka se ztratila v kódu","Error 404 - Page Not Found"],d=["Zkuste zkontrolovat URL adresu.","Možná jste se přepsali v adrese.","Stránka mohla být přesunuta nebo odstraněna.","Použijte navigaci pro návrat na hlavní stránku."],x=o[Math.floor(Math.random()*o.length)],g=d[Math.floor(Math.random()*d.length)],n=document.createElement("div");n.className="min-h-screen";n.innerHTML=`
     <nav class="fixed top-0 w-full bg-gray-100 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 z-50 transition-colors backdrop-blur-sm bg-opacity-90">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-14">
@@ -108,7 +66,7 @@ app.innerHTML = /* html */`
                     <span class="text-purple-600 dark:text-purple-400"> new</span>
                     <span class="text-yellow-400"> Error</span>
                     <span class="text-gray-400">(</span>
-                    <span class="text-green-600 dark:text-green-400">"${randomError}"</span>
+                    <span class="text-green-600 dark:text-green-400">"${x}"</span>
                     <span class="text-gray-400">);</span>
                 </div>
 
@@ -119,7 +77,7 @@ app.innerHTML = /* html */`
                         </svg>
                         <div class="text-left">
                             <p class="text-sm font-semibold text-yellow-800 dark:text-yellow-300">Tip</p>
-                            <p class="text-sm text-yellow-700 dark:text-yellow-400 mt-1">${randomTip}</p>
+                            <p class="text-sm text-yellow-700 dark:text-yellow-400 mt-1">${g}</p>
                         </div>
                     </div>
                 </div>
@@ -201,65 +159,4 @@ app.innerHTML = /* html */`
             </div>
         </section>
     </main>
-`;
-
-document.body.appendChild(app);
-
-setTimeout(() => {
-    const dropdownBtn = document.getElementById('theme-dropdown-btn');
-    const dropdown = document.getElementById('theme-dropdown');
-    const themeButtons = dropdown.querySelectorAll('[data-theme]');
-
-    dropdownBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', () => {
-        if (!dropdown.classList.contains('hidden')) {
-            dropdown.classList.add('hidden');
-        }
-    });
-
-    dropdown.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-
-    themeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const theme = btn.getAttribute('data-theme');
-            setTheme(theme);
-            dropdown.classList.add('hidden');
-        });
-    });
-}, 100);
-
-const typeText = (element, text, baseSpeed = 80) => {
-    let i = 0;
-    element.textContent = '';
-    const cursor = element.nextElementSibling;
-    
-    const type = () => {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            const randomDelay = baseSpeed + Math.random() * 150 - 50;
-            setTimeout(type, randomDelay);
-        } else {
-            setTimeout(() => {
-                if (cursor) {
-                    cursor.style.display = 'none';
-                }
-            }, 1000);
-        }
-    };
-    
-    type();
-};
-
-setTimeout(() => {
-    const errorElement = document.getElementById('typed-error');
-    if (errorElement) {
-        typeText(errorElement, '404', 100);
-    }
-}, 600);
+`;document.body.appendChild(n);setTimeout(()=>{const e=document.getElementById("theme-dropdown-btn"),a=document.getElementById("theme-dropdown"),r=a.querySelectorAll("[data-theme]");e.addEventListener("click",t=>{t.stopPropagation(),a.classList.toggle("hidden")}),document.addEventListener("click",()=>{a.classList.contains("hidden")||a.classList.add("hidden")}),a.addEventListener("click",t=>{t.stopPropagation()}),r.forEach(t=>{t.addEventListener("click",()=>{const s=t.getAttribute("data-theme");p(s),a.classList.add("hidden")})})},100);const v=(e,a,r=80)=>{let t=0;e.textContent="";const s=e.nextElementSibling,l=()=>{if(t<a.length){e.textContent+=a.charAt(t),t++;const i=r+Math.random()*150-50;setTimeout(l,i)}else setTimeout(()=>{s&&(s.style.display="none")},1e3)};l()};setTimeout(()=>{const e=document.getElementById("typed-error");e&&v(e,"404",100)},600);

@@ -1,40 +1,4 @@
-import './styles/main.css';
-
-const initTheme = () => {
-  const theme = localStorage.getItem('theme') || 'light';
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-};
-
-const setTheme = (theme) => {
-  if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-  localStorage.setItem('theme', theme);
-};
-
-initTheme();
-
-const calculateAge = (birthDate) => {
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-    }
-    return age;
-};
-
-
-const app = document.createElement('div');
-app.className = 'min-h-screen';
-
-app.innerHTML = /* html */`
+import"./main-C7BSEx1I.js";const r=()=>{(localStorage.getItem("theme")||"light")==="dark"?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")},i=a=>{a==="dark"?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark"),localStorage.setItem("theme",a)};r();const o=a=>{const e=new Date;let s=e.getFullYear()-a.getFullYear();const t=e.getMonth()-a.getMonth();return(t<0||t===0&&e.getDate()<a.getDate())&&s--,s},d=document.createElement("div");d.className="min-h-screen";d.innerHTML=`
   <nav class="fixed top-0 w-full bg-gray-100 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 z-50 transition-colors backdrop-blur-sm bg-opacity-90">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-14">
@@ -89,7 +53,7 @@ app.innerHTML = /* html */`
           Trochu o mně
         </h2>
         <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Jsem Jirka, je mi ${calculateAge(new Date(2004, 5, 27))} let. Jsem studentem informatiky na VŠB-TUO se zaměřením na full stack vývoj webových stránek a aplikací. Primárně pracuji s čistým PHP a JavaScriptem. Kromě programování mě zajímá historie a technologie obecně. Dále mě třeba baví fotografie a procházky v přírodě.
+          Jsem Jirka, je mi ${o(new Date(2004,5,27))} let. Jsem studentem informatiky na VŠB-TUO se zaměřením na full stack vývoj webových stránek a aplikací. Primárně pracuji s čistým PHP a JavaScriptem. Kromě programování mě zajímá historie a technologie obecně. Dále mě třeba baví fotografie a procházky v přírodě.
         </p>
       </section>
 
@@ -445,35 +409,4 @@ app.innerHTML = /* html */`
       </section>
     </div>
   </main>
-`;
-
-document.body.appendChild(app);
-
-setTimeout(() => {
-  const dropdownBtn = document.getElementById('theme-dropdown-btn');
-  const dropdown = document.getElementById('theme-dropdown');
-  const themeButtons = dropdown.querySelectorAll('[data-theme]');
-
-  dropdownBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('hidden');
-  });
-
-  document.addEventListener('click', () => {
-    if (!dropdown.classList.contains('hidden')) {
-      dropdown.classList.add('hidden');
-    }
-  });
-
-  dropdown.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-
-  themeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const theme = btn.getAttribute('data-theme');
-      setTheme(theme);
-      dropdown.classList.add('hidden');
-    });
-  });
-}, 100);
+`;document.body.appendChild(d);setTimeout(()=>{const a=document.getElementById("theme-dropdown-btn"),e=document.getElementById("theme-dropdown"),s=e.querySelectorAll("[data-theme]");a.addEventListener("click",t=>{t.stopPropagation(),e.classList.toggle("hidden")}),document.addEventListener("click",()=>{e.classList.contains("hidden")||e.classList.add("hidden")}),e.addEventListener("click",t=>{t.stopPropagation()}),s.forEach(t=>{t.addEventListener("click",()=>{const l=t.getAttribute("data-theme");i(l),e.classList.add("hidden")})})},100);
