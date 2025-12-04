@@ -93,7 +93,8 @@ const triviaFacts = [
   "První verze Mac OS byla vydaná v roce 2001 a byla založena na technologii NeXTSTEP, kterou Apple získal koupí společnosti NeXT, kterou založil Steve Jobs po svém odchodu z Applu v roce 1985.",
   "Defaultní port pro HTTP je 80, zatímco pro HTTPS je to 443.",
   "Všechny tyto fakty jsem sepsal a ověřoval ručně.",
-  "Hra RollerCoaster Tycoon byla původně celá napsána v jazyce Assembly za účelem optimalizaci výkonu."
+  "Hra RollerCoaster Tycoon byla původně celá napsána v jazyce Assembly za účelem optimalizaci výkonu.",
+  "Pro tento web jsem vytvořil i vlastní stránku <a href=\"/error.html\">erroru 404</a>",
 ];
 
 triviaFacts.push(`Aktuální epocha Unix času je <b>${Math.floor(Date.now() / 1000)}</b> sekund od 1. ledna 1970.`);

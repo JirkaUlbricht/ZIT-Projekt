@@ -474,38 +474,4 @@ setTimeout(() => {
       dropdown.classList.add('hidden');
     });
   });
-
-  const downloadBtn = document.getElementById('download-btn');
-  const downloadDropdown = document.getElementById('download-dropdown');
-  const downloadButtons = downloadDropdown.querySelectorAll('[data-format]');
-
-  downloadBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    downloadDropdown.classList.toggle('hidden');
-  });
-
-  document.addEventListener('click', () => {
-    if (!downloadDropdown.classList.contains('hidden')) {
-      downloadDropdown.classList.add('hidden');
-    }
-  });
-
-  downloadDropdown.addEventListener('click', (e) => {
-    e.stopPropagation();
-  });
-
-  downloadButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const format = btn.getAttribute('data-format');
-      
-      if (format === 'styled') {
-        generateStyledCV();
-      } else {
-        generateSimpleCV();
-      }
-      
-      downloadDropdown.classList.add('hidden');
-    });
-  });
 }, 100);
